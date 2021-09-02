@@ -1,0 +1,45 @@
+@import '../../../styles/global.scss';
+
+
+.topBar{
+  padding-top:10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  color:white;
+  position: absolute;
+  top:0;
+  width:100%;
+  a{
+    color: white;
+    text-decoration: none;
+    padding-left:20px;
+    filter: contrast(200%)
+  }
+  .leftSide{
+    width:25%;
+    display:flex;
+    align-items:center;
+    a:first-child{
+      padding-left:40px;
+    }
+    .arrow{
+      height:11px;
+    }
+  }
+  .center{
+    width:25%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    filter: contrast(200%)
+  }
+  .rightSide{
+    width:25%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+  }
+}

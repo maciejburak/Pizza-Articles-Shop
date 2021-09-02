@@ -1,0 +1,13 @@
+@import '../../../styles/global.scss';
+
+.ovens{
+  height: 100%;
+  width:100%;
+  .carusel{
+    img{
+      width:300px;
+      height:300px;
+      border:1px solid black;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../../styles/global.scss';
+
+.sliderElement{
+  animation: .5s ease;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color:#996600;;
+  h2{
+    position: absolute;
+    top: 40%;
+    left: 35%;
+    display:none;
+  }
+  button{
+    position: absolute;
+    top: 57%;
+    left: 35%;
+    display: none;
+  }
+}
+.sliderElement:hover button {
+  display: block;
+  opacity: 1; }
+
+.sliderElement:hover h2 {
+  display: block;
+  opacity: 1; }
+
+.sliderElement:hover img {
+  filter: brightness(50%); 
+}

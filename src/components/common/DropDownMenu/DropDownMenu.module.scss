@@ -1,0 +1,130 @@
+@import '../../../styles/global.scss';
+
+
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, -20%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes fadeOut {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+
+.topBar{
+  padding-top:10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  color:white;
+  position: absolute;
+  top:0;
+  width: calc(100% - 50px);
+  a{
+    color: white;
+    text-decoration: none;
+    padding-left:20px;
+    //filter: contrast(200%)
+  }
+  .leftSide{
+    width:20%;
+    display:flex;
+    align-items:center;
+    a:first-child{
+      padding-left:40px;
+    }
+    .arrow{
+      height:11px;
+    }
+  }
+  .center{
+    width:25%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color:#996600;
+  }
+  .rightSide{
+    width:25%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+  }
+}
+
+.topShopMenu{
+  width: 100%;
+  background-color: black;
+  height: 520px;
+  position:absolute;
+  top:0;
+  left:0;
+  display:flex;
+  flex-direction: row;
+  padding-top:120px;
+  padding-left:50px;
+  color:#996600;
+  .optionList{
+    font-size: 20px;
+    padding-top:40px;
+   .one{
+      position: absolute;
+      top:40%;
+      left: 16%;
+    }
+    .two{
+      position: absolute;
+      top:55%;
+      left: 16%;
+    }
+    .three{
+      position: absolute;
+      top:71%;
+      left: 24%;
+    }
+    a{
+      text-decoration: none;
+      color: inherit;
+      font-size: 70px;
+      padding-top:30px;
+    }
+
+  }
+  .images{
+    *{
+      position:absolute;
+      width:400px;
+      height:400px;
+      right:20%;
+      top:15%;
+    }
+  }
+  button{
+    position:absolute;
+    left:47%;
+    bottom:10%;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: inherit;
+    border-color: white;
+    svg{
+      font-size: 30px;
+      color:white
+    }
+  }
+}

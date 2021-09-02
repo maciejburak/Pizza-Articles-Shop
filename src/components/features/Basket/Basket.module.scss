@@ -1,0 +1,93 @@
+@import '../../../styles/global.scss';
+
+*, ::before{
+  box-sizing: border-box;
+}
+.basket{
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top:90px;
+  right:5px;
+  z-index:2;
+  border: 6px solid #996600;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left:10px;
+  padding-top:10px;
+  color:black;
+
+  .content{
+    height: 182px;
+    overflow-y: auto;
+    font-size:14px;
+  }
+
+  h2{
+    margin:0;
+    margin-bottom:10px;
+  }
+
+  .position{
+  display: flex;
+  flex-direction: row;
+  position:relative;
+    p{
+      padding-right:35px;
+      padding-left: 10px;
+    }
+  }
+  .lineGrey{
+    height:1px;
+    background-color: grey;
+    display: block;
+    width: 80%;
+    top: 46px;
+    position:absolute;
+    left:16px;
+  }
+  .total{
+    width:100%;
+
+    .line{
+      margin:40px;
+      position:absolute;
+      left:-12px;
+      top:70%;
+      width: 80%;
+    }
+    p{
+      padding-top: 25px;
+      margin:0;
+      font-size:20px;
+    }
+    .sum{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      button{
+        margin-top: 25px;
+        height:30px;
+
+      }
+    }
+  }
+
+}
+.basket::before{
+  content:'';
+  background-color: white;
+  position: absolute;
+  top:-19px;
+  right:41px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  border-top: 6px solid #996600;
+  border-left: 6px solid #996600;
+  z-index:1
+}
