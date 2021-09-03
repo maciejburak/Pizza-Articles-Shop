@@ -1,26 +1,35 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import Slider from '../../common/Slider/SliderContainer.js';
 import Bestseller from '../../common/Bestseller/Bestseller';
 import Footer from '../../layout/Footer/Footer';
+import { filterProducts } from '../../../utils';
 
-function Acessories({ data }) {
+function Acessories({ uploadProducts, pictures, products }) {
+
+  useEffect(() => {
+    uploadProducts();
+  }, []);
+
+
   return (
     <div>
       <SectionHeader
-        customHeader= {data.pictures.acessoriesHeader}
+        customHeader= {pictures.acessoriesHeader}
         sectionType="Acessories"
       />
-      <Slider data ={data.acessories} />
-      <Bestseller content = {data.acessories[3]} />
+      <Slider data ={filterProducts(products, 'acessorie')} />
+      <Bestseller content = {filterProducts(products, 'acessorie')[3]} />
       <Footer />
     </div>
   );
 }
 
 Acessories.propTypes = {
-  data: PropTypes.object,
+  pictures: PropTypes.object,
+  products: PropTypes.array,
+  uploadProducts: PropTypes.func,
 };
 
 export default Acessories;

@@ -5,3 +5,11 @@ export const countBasket = (basket) => {
   }
   return total;
 };
+
+export const filterProducts = (products, productKind) => {
+  const filteredArray = [];
+  for (let product of products) {
+    if (product.type === productKind) filteredArray.push(product);
+  }
+  return filteredArray;
+};

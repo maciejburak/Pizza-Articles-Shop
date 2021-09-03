@@ -1,10 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getAll } from '../../../redux/dataRedux';
+import {fetchPublished, getPictures, getProducts } from '../../../redux/dataRedux';
 import Ovens from './Ovens';
 
 const mapStateToProps = (state) => ({
-  data: getAll(state),
+  products: getProducts(state),
+  pictures: getPictures(state),
 });
 
-export default connect(mapStateToProps)(Ovens);
+const mapDispatchToProps = (dispatch) => ({
+  uploadProducts: () => dispatch(fetchPublished()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Ovens);
