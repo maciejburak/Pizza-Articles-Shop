@@ -1,32 +1,88 @@
 @import '../../../styles/global.scss';
 
-.sliderElement{
-  animation: .5s ease;
-  position: relative;
+.slider{
+  background-color: #fff5f8;
   padding-top: 40px;
   padding-bottom: 40px;
-  color:#996600;;
-  h2{
-    position: absolute;
-    top: 40%;
-    left: 35%;
-    display:none;
+  .sliderElement{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    background-color: white;
+    img{
+      height:60%;
+      width: 350px;
+      padding: 20px;
+    }
+    .description{
+      display: flex;
+      flex-direction: column;
+      font-size: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      .priceAndName{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        margin-top:10px;
+        a{
+          text-decoration: none;
+          font-weight: 900;
+          color:#0D2F87;
+        }
+        p{
+          margin:0;
+        }
+      }
+      .options{
+        margin-bottom: 30px;
+        margin-top:10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        label{
+          padding-right:10px;
+        }
+        select{
+          width:80px;
+        }
+      }
+      button{
+        height: 40px;
+        font-weight: 900;
+        background-color: white;
+        color:#0D2F87;
+        border: 3px solid #0D2F87;
+      }
+      button:hover{
+        background-color: #0D2F87;
+        color:white;
+      }
+    }
   }
-  button{
-    position: absolute;
-    top: 57%;
-    left: 35%;
-    display: none;
+  .sliderElement:hover {
+    box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
   }
 }
-.sliderElement:hover button {
-  display: block;
-  opacity: 1; }
 
-.sliderElement:hover h2 {
-  display: block;
-  opacity: 1; }
+@media(max-width:550px){
+  .sliderElement{
+    width: 400px !important;
+}}
+  
+@media(max-width:400px){
+  .sliderElement{
+    width: 300px !important;
+    img{
+      width:300px !important;
+    }
+}}
+@media(max-width:350px){
+  .sliderElement{
+    width: 250px !important;
+    img{
+      width:250px !important;
+    }
+}}
 
-.sliderElement:hover img {
-  filter: brightness(50%); 
-}
+

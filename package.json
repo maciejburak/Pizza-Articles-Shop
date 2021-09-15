@@ -11,10 +11,12 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "connect-mongo": "^4.5.0",
     "cors": "^2.8.5",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "express": "^4.17.1",
+    "express-session": "^1.17.2",
     "mongodb": "^4.1.1",
     "mongoose": "5.7.1",
     "node-sass": "^4.14.1",
@@ -32,7 +34,9 @@
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
+    "simple-react-lightbox": "^3.6.9-0",
     "styled-components": "^5.3.1",
+    "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TopBar from '../../layout/TopBar/TopBar';
 import styles from './SectionHeader.module.scss';
+import { Button } from '@material-ui/core';
+import {BsBoxArrowInDown} from 'react-icons/bs';
 
-export const SectionHeader = ({ customHeader, sectionType }) => {
+export const SectionHeader = ({ customHeader, children }) => {
   return (
     <div className={styles.sectionHeader}>
       <img src={customHeader} alt="header" />
-      <TopBar />
-      <h1 className={styles.sectionName}>{sectionType}</h1>
+      <Button variant="outlined" >
+        <a href="#products">Check our products  <BsBoxArrowInDown/></a>
+      </Button>
     </div>
   );
 };
@@ -16,6 +18,7 @@ export const SectionHeader = ({ customHeader, sectionType }) => {
 SectionHeader.propTypes = {
   customHeader: PropTypes.string,
   sectionType: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default SectionHeader;

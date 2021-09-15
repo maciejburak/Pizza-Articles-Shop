@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import styles from './Recipe.module.scss';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import Footer from '../../layout/Footer/Footer';
+import TopBar from '../../layout/TopBar/TopBar';
+import CheckOrder from '../../common/CheckOrder/CheckOrderContainer';
+
+
 
 function Recipe(props) {
   return (
     <div className={styles.recipe}>
       <SectionHeader customHeader="https://pyzamadeinpoland.pl/wp-content/uploads/2018/06/napoli-1-7.jpg" />
+      <TopBar open={true}  rwd={true}/>
       <div className={styles.information}>
         <div className={styles.description}>
           <h2>What is it?</h2>
@@ -191,6 +196,7 @@ function Recipe(props) {
           </p>
         </div>
       </div>
+      <CheckOrder/>
       <Footer />
     </div>
   );

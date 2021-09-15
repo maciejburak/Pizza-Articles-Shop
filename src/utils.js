@@ -13,3 +13,14 @@ export const filterProducts = (products, productKind) => {
   }
   return filteredArray;
 };
+export const getNumbersFrom1To100 = () => {
+  const array = [];
+  for(let i = 0;i <= 100;i++) array.push(i);
+  return array;
+};
+
+export const randerItems =(width) =>{
+  if(width>1400) return 3;
+  else if(width>990 && width<1400) return 2;
+  else return 1;
+};

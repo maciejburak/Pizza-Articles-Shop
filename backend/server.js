@@ -4,12 +4,17 @@ const path = require('path');
 const mongoose = require('mongoose');
 const dataRoutes = require('./routes/product.routes.js');
 const app = express();
+const session = require('express-session');
+const MongoStore = require('connect-mongo')
 
 /* MIDDLEWARE */
 app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+app.use(session({
+  secret: 'shhh!',
+  store: MongoStore.create({mongoUrl: 'mongodb://localhost:27017/ShopDB'}),
+}));
 app.use(express.static(path.join(__dirname, '../build')));
 
 /* API ENDPOINTS */
@@ -26,11 +31,13 @@ app.use('*', (req, res) => {
 });
 
 /* MONGOOSE */
+
 mongoose.connect('mongodb://localhost:27017/ShopDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 const db = mongoose.connection;
+
 db.once('open', () => {
   console.log('Successfully connected to the database');
 });

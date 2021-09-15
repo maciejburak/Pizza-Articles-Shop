@@ -1,41 +1,67 @@
-import React from 'react';
+import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import styles from './AboutUs.module.scss';
+import { MdHighQuality } from 'react-icons/md';
+import { GiTripleGate } from 'react-icons/gi';
+import { SiCashapp } from 'react-icons/si';
+import { IoIosHelpBuoy } from 'react-icons/io';
+import Contact from '../Contact/Contact';
 
 export const AboutUs = (props) => {
+  const [contactActive, setContactActive] = useState(false);
+
   return (
-    <div id="about" className={styles.aboutUs + ' ' + styles.container}>
-      <div className={styles.line}/>
-      <div>
-        <h2> ABOUT US</h2>
-      </div>
-      <div className={styles.content}>
-        <div>
-          <img
-            src="http://lacon.pl/wp-content/uploads/2015/01/happy-people-friends-400x293.jpg"
-            alt="foto.jpg"
-          />
-          <div className={styles.box} />
-        </div>
-        <div className={styles.text}>
+    <div className={styles.aboutUs}>
+      <div className={styles.offer}>
+        <div className={styles.box}>
+          <MdHighQuality />
+          <h2>HIGH QUALITY ITEMS</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            molestie vitae mauris in gravida. Sed vel tristique turpis, at
-            mollis diam. Sed vitae augue facilisis, commodo risus quis,
-            imperdiet sem. Orci varius natoque penatibus et magnis dis
-            parturient montes, nascetur ridiculus mus. Pellentesque neque leo,
-            aliquet eu maximus vitae, vulputate hendrerit ligula. Etiam ultrices
-            mauris ac risus posuere, ut laoreet ipsum porta. Nulla facilisi.
-            Cras vulputate nunc sem, id maximus est sodales a. Ut porttitor
-            porta nulla, nec tempus erat convallis vitae. Maecenas dui est,
-            aliquet aliquet sem eu, pellentesque tempor lectus. Interdum et
-            malesuada fames ac ante ipsum primis in faucibus. Morbi rutrum sed
-            ante dignissim tempus. Pellentesque eleifend volutpat enim nec
-            viverra.
+            In our store we can offer you the best pizza items in the highest
+            word s quality. To every accesorie we adding guarantee and also
+            after 14 days if product no meets your expectations you will return
+            product with no extra costs.
+          </p>
+        </div>
+        <div className={styles.box}>
+          <GiTripleGate />
+          <h2>NEW EXPERIENCES</h2>
+          <p>
+            You will can enjoying your proffesional pizza staff and explore new
+            ways in cooking development. Our items will can give you things
+            which ones do not feel in other pizza staff.{' '}
+          </p>
+        </div>
+        <div className={styles.box}>
+          <SiCashapp />
+          <h2>EXCLUSIVE RATES</h2>
+          <p>
+            By registering, you will access specially negotiated rates that you
+            will not find anywhere else. Safe our money and try our discount
+            offer. Our employees will help you choose the best option.
           </p>
         </div>
       </div>
-      <div className={styles.line}/>
+      <div className={styles.newsletter}>
+        <div className={styles.receiveOffers}>
+          <h1>RECEIVE OFFERS</h1>
+          <p>Taste the holidays of the everyday close to home.</p>
+          <input type="e-mail" placeholder="E-mail" />
+          <button>KEEP ME UPDATED</button>
+        </div>
+        <img
+          src="https://cdn.upmenu.com/static/attributes/d9507da7-1f12-11e5-ac27-00163edcb8a0/7424e4f9-687d-11eb-bdef-525400080521/2d4300bd-d13c-43c0-8035-13f03ed61159/pizza-3007395_1920.jpg"
+          alt="pizza"
+        />
+      </div>
+      {contactActive ? <Contact close={setContactActive}/> : null}
+      <div className={styles.help}>
+        <button onClick={() => setContactActive(true)}>
+          GOT ANY QUESTIONS? NEED HELP?
+        </button>
+        <p>We are here to help. Get in touch!</p>
+        <IoIosHelpBuoy />
+      </div>
     </div>
   );
 };

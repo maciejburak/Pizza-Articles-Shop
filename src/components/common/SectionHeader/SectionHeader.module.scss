@@ -1,15 +1,84 @@
 .sectionHeader{
   img {
     width:100%;
-    height: 500px;
-    filter:brightness(0.7);
+    height: 100vh;
+    filter:brightness(0.5);
     position:relative;
   }
-  .sectionName{
-    font-size: 50px;
+  button{
+    font-size: 30px;
     position:absolute;
     top:45%;
-    left:45%;
-    color:black;
+    left:32%;
+    border:5px solid white;
+    width: 500px;
+    height: 100px;
+    a{
+      text-decoration: none;
+      color:white;
+    }
+  }
+}
+@media (max-width: 1200px){
+  .sectionHeader{
+    button{
+      left:26%;
+    }
+  }
+}
+
+@media (max-width: 950px){
+  .sectionHeader{
+    button{
+      left:21%;
+    }
+  }
+}
+
+@media (max-width: 750px){
+  .sectionHeader{
+    button{
+      left:18%;
+    }
+  }
+}
+
+@media (max-width: 650px){
+  .sectionHeader{
+    button{
+      font-size: 22px;
+      left:12%;
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width: 530px){
+  .sectionHeader{
+    button{
+      font-size: 18px;
+      left:23%;
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 450px){
+  .sectionHeader{
+    button{
+      font-size: 15px;
+      left:8%;
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 340px){
+  .sectionHeader{
+    button{
+      font-size: 15px;
+      width: 300px;
+      left:2%;
+    }
   }
 }

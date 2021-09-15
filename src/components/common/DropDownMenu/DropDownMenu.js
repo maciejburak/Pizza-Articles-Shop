@@ -5,12 +5,11 @@ import flour from '../../../images/flour.png';
 import oven from '../../../images/oven.png';
 import acessories from '../../../images/acessories.png';
 import { IoIosArrowUp } from 'react-icons/io';
-import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import TopBar from '../../layout/TopBar/TopBar';
 
-function DropDownMenu({ toggleMenuValue, func }) {
-  const [open, setOpen] = useState('');
+
+function DropDownMenu({ toggleMenuValue, func } ) {
   const [flourDisplay, setFlourDisplay] = useState(false);
   const [ovenDisplay, setOvenDisplay] = useState(false);
   const [acessoriesDisplay, setAcessoriesDisplay] = useState(false);
@@ -25,7 +24,7 @@ function DropDownMenu({ toggleMenuValue, func }) {
 
   return toggleMenuValue ? (
     <div className={styles.topShopMenu} {...tsmAnimation}>
-      <TopBar/>
+      <TopBar rwd={false}/>
       <div className={styles.optionList}>
         <div
           onMouseEnter={() => setFlourDisplay(true)}
@@ -64,16 +63,22 @@ function DropDownMenu({ toggleMenuValue, func }) {
           <img src={acessories} alt="acessories" {...tsmAnimation} />
         ) : null}
       </div>
-      <button onClick={() => func(false)}>
+      <button className={styles.closeButton} onClick={() => func(false)}>
         <IoIosArrowUp />
       </button>
     </div>
   ) : null;
 }
+
 DropDownMenu.propTypes = {
   toggleMenuValue: PropTypes.bool,
   func: PropTypes.func,
   children: PropTypes.node,
+  idFromLink: PropTypes.object,
 };
 
-export default DropDownMenu;
+export default (DropDownMenu);
+
+
+
+

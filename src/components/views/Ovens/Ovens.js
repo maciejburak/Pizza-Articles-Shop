@@ -1,26 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Ovens.module.scss';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import Slider from '../../common/Slider/SliderContainer.js';
-import Bestseller from '../../common/Bestseller/Bestseller';
 import Footer from '../../layout/Footer/Footer';
 import { filterProducts } from '../../../utils';
+import Quote from '../../layout/Quote/Quote';
+import TopBar from '../../layout/TopBar/TopBar';
+import CheckOrder from '../../common/CheckOrder/CheckOrderContainer';
 
-function Ovens({ uploadProducts, pictures, products }) {
-  useEffect(() => {
-    uploadProducts();
-  }, []);
-
+function Ovens({ pictures, products }) {
 
   return (
     <div className={styles.ovens}>
-      <SectionHeader
-        customHeader= {pictures.ovensHeader}
-        sectionType="Ovens"
-      />
+      <SectionHeader customHeader= {pictures.ovensHeader}/>
+      <TopBar open={true}  rwd={true}/>
       <Slider data={filterProducts(products, 'oven')} />
-      <Bestseller content = {filterProducts(products, 'oven')[2]}/>
+      <Quote/>
+      <CheckOrder/>
       <Footer />
     </div>
   );
@@ -29,7 +26,6 @@ function Ovens({ uploadProducts, pictures, products }) {
 Ovens.propTypes = {
   pictures: PropTypes.object,
   products: PropTypes.array,
-  uploadProducts: PropTypes.func,
 };
 
 export default Ovens;

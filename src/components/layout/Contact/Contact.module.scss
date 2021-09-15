@@ -1,75 +1,57 @@
 @import '../../../styles/global.scss';
 
 .contact{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  width:100%;
-  height:100vh;
+  width:100vw;
+  height: 100vh;
+  background-color:rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top:0;
+  z-index: 3;
+
   .form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    input{
-      width:300px;
-      //height: 200px;
-    }
-  }
-  .description{
-    width:50%;
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-}
+    width:25%;
+    height:60%;
+    background-color: white;
+    margin:auto;
+    margin-top:10%;
+    color:black;
+    border-radius: 5%;
+    position:relative;
+    background-color: #fff5f8;
 
-/*.contact{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  .content{
-  background-color: #996600;
-  height: 300px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  .contactData{
-    width:30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 220px;
-    margin-top:40px;
-  }
-  .inputForm{
-    width:30%;
-    display: flex;
-    flex-direction: column;
-    height: 220px;
-    margin-top:40px;
-    label{
-      padding-top: 12px;
+    h2{
+      margin-bottom: 50px;
     }
-    .socialMedia{
-      padding-top: 15px;
-      *{
-        height: 20px;
-        width: 20px;
-        //margin-right: 15px;
-        padding:10px;
-        border-radius: 50%;
-      }
-      *:hover{
-        background-color:#996600;
+
+    .cross{
+      position: absolute;
+      top:2%;
+      right:3%;
+      cursor:pointer;
+    }
+    .cross:hover{
+      color:red;
+    }
+    .section{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width:80%;
+      svg{
         opacity:0.7;
+        margin-top: 20px;
       }
+      input{
+        width: 250px;
+        padding-top: 20px;
+      }
+    }
+    button{
+      margin-top:20px;
     }
   }
 }
-
-
-}*/
