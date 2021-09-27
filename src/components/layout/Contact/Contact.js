@@ -7,8 +7,6 @@ import { GrMail } from 'react-icons/gr';
 import { FaKey } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 
-
-
 export const Contact = ({close}) => {
   return (
     <div className={styles.contact}>

@@ -7,15 +7,15 @@ import DropDownMenu from '../../common/DropDownMenu/DropDownMenu';
 import Basket from '../../features/Basket/BasketContainer.js';
 import { Link } from 'react-router-dom';
 import Search from '../../features/Search/SearchContainer';
-import RWDMenu from '../RWDMenu/RWDMenu';
+import RWDMenu from '../../layout/RWDMenu/RWDMenu.js';
 import { BiMenu } from 'react-icons/bi';
 
-function TopBar({ open, rwd }) {
+function TopBar({ open, rwd, black }) {
   const [toggleValue, setToggleValue] = useState(false);
   const [activeBucket, setActiveBucket] = useState(false);
   const [rwdMenu, setRwdMenu] = useState(false);
   return !toggleValue ? (
-    <div className={styles.topBar}>
+    <div className={black? styles.topBar + ' ' + styles.black :styles.topBar + ' ' + styles.white}>
       <div className={styles.leftSide}>
         <Search />
       </div>
@@ -71,6 +71,7 @@ function TopBar({ open, rwd }) {
 TopBar.propTypes = {
   open: PropTypes.bool,
   rwd: PropTypes.bool,
+  black: PropTypes.bool,
 };
 
 export default TopBar;

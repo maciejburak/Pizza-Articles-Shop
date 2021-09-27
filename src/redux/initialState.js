@@ -135,6 +135,9 @@ export const initialState = {
       active: false,
       error: false,
     },
+  },
+  order:{
     basket: [],
+    description: '',
   },
 };

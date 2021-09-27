@@ -105,3 +105,59 @@
     }
   }
 }
+
+@media (max-width:1067px){
+  .recipe{
+    ol{
+      padding-left: 5px;
+    }
+    .information, .secondStep, .fourthStep, .sixthStep{
+      flex-direction: column;
+    }
+    .firstStep, .thirdStep, .fifthStep, .seventhStep{
+      flex-direction:column-reverse;
+    }
+    .information{
+      .photo{
+        padding-bottom: 15px;
+      }
+    }
+    .secondStep{
+      .photo{
+        margin-top: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width:788px){
+  .recipe{
+    font-size:14px;
+  }
+}
+
+@media (max-width:688px){
+  .recipe{
+    font-size:12px;
+    .information, .fourthStep, .sixthStep, .firstStep, .thirdStep, .fifthStep, .seventhStep{
+      .photo{
+        margin-top:10px;
+      }
+    }
+    .secondStep{
+      margin-top:40px;
+    }
+  }
+}
+
+@media (max-width:588px){
+  .recipe{
+    font-size:10px;
+  }
+}
+
+@media (max-width:488px){
+  .recipe{
+    font-size:8px;
+  }
+}

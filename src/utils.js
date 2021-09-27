@@ -24,3 +24,4 @@ export const randerItems =(width) =>{
   else if(width>990 && width<1400) return 2;
   else return 1;
 };
+

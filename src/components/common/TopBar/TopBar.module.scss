@@ -12,7 +12,7 @@
   top:0;
   width:100%;
   a{
-    color: white;
+    //color:white;
     text-decoration: none;
     filter: contrast(200%);
     cursor:pointer;
@@ -42,6 +42,17 @@
     justify-content: space-evenly;
     
   }
+}
+.white{
+    a{
+      color:white;
+    }
+}
+
+.black{
+    a{
+      color:black;
+    }
 }
 
 @media (min-width:1068px) and (max-width:2000px){

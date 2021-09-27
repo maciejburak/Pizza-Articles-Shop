@@ -1,36 +1,27 @@
-import { SRLWrapper } from "simple-react-lightbox";
-// USE THE IMPORT BELOW INSTEAD IF YOU ARE USING THE PRO VERSION
-// import { SRLWrapper } from 'simple-react-lightbox-pro'
+import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import styles from './Lightbox.module.scss';
+import { BiLeftArrowCircle, BiRightArrowCircle } from 'react-icons/bi';
+import { AiOutlineClose } from 'react-icons/ai';
 
-function LightBox() {
+function Lightbox({ data, func, photo }) {
+  const [n, setN] = useState(photo);
   return (
-    <SRLWrapper>
-    <a href="/product01.jpg" className="element_with_overlay">
-      <div className="overlay" srl_overlay="true">
-        <h1>Funny cap</h1>
-        <p>£30.00</p>
+    <div className={styles.lightbox}>
+      <AiOutlineClose className={styles.cross} onClick={() =>func(false)}/>
+      <div className={styles.mainPhoto}>
+        <button onClick={n!=0?()=>setN(n-1):null}><BiLeftArrowCircle/></button>
+        <img className={styles.headPhoto} src={data[n]} alt={`photo ${n}`} />
+        <button onClick={n!=3?()=>setN(n+1): null}><BiRightArrowCircle/></button>
       </div>
-      <img src="product/01.jpg" alt="Funny cap"/>
-    </a>
-    <a href="/product02.jpg" className="element_with_overlay">
-      <div className="overlay" srl_overlay="true">
-        <h1>Sunglasses</h1>
-        <p>£90.00</p>
-      </div>
-      <img src="product/02.jpg" alt="Sunglasses"/>
-    </a>
-    <div className="element_with_overlay">
-      <div className="overlay" srl_overlay="true">
-        <h1>Funny cap</h1>
-        <p>£30.00</p>
-      </div>
-      <img
-        src="/product03.jpg"
-        alt="Cool backpack"
-      />
     </div>
-    </SRLWrapper>
-  )
+  );
 }
 
-export default LightBox;
+Lightbox.propTypes = {
+  data: PropTypes.array,
+  func: PropTypes.func,
+  photo: PropTypes.number,
+};
+
+export default Lightbox;

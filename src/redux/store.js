@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { initialState } from './initialState';
 import { reducer as dataReducer } from './dataRedux';
+import { reducer as orderReducer } from './orderRedux';
 
 // define reducers
 const reducers = {
   data: dataReducer,
+  order: orderReducer,
 };
 
 // add blank reducers for initial state properties without reducers

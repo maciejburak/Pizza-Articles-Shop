@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Search from '../../features/Search/Search';
 import styles from './RWDMenu.module.scss';
 
 function RWDMenu({

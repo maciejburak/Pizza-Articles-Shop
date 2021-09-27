@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import styles from './BackgroundVideo.module.scss';
 import AdvVideo from '../../../video/film.mp4';
 
-const BackgroundVideo = ({children}) => {
+const BackgroundVideo = ({ children }) => {
   return (
     <>
       <div className="container">
+        
         <video
           muted ={true}
           autoPlay={true}

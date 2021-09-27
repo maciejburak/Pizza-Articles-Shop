@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import PropTypes from 'prop-types';
 import styles from './AboutUs.module.scss';
 import { MdHighQuality } from 'react-icons/md';
 import { GiTripleGate } from 'react-icons/gi';
@@ -66,6 +65,5 @@ export const AboutUs = (props) => {
   );
 };
 
-AboutUs.propTypes = {};
 
 export default AboutUs;

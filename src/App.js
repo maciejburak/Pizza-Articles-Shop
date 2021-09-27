@@ -8,15 +8,17 @@ import Flours from './components/views/Flours/FloursContainer.js';
 import Acessories from './components/views/Acessories/AcessoriesContainer';
 import Recipe from './components/views/Recipe/Recipe';
 import AboutUs from './components/layout/AboutUs/AboutUs';
-import Product from './components/layout/Product/ProductContainer';
+import Product from './components/views/Product/ProductContainer';
 import Order from './components/views/Order/OrderContainer';
 import { fetchPublished } from './redux/dataRedux';
 import { connect } from 'react-redux';
+import { applyBasket } from './redux/orderRedux';
 
-function App({uploadProducts}) {
+function App({uploadProducts, uploadBasket}) {
   useEffect(() => {
     uploadProducts();
-  }, []);
+    uploadBasket();
+  },[]);
   return (
     <BrowserRouter>
       <MainLayout>
@@ -38,10 +40,12 @@ function App({uploadProducts}) {
 
 const mapDispatchToProps = (dispatch) => ({
   uploadProducts: () => dispatch(fetchPublished()),
+  uploadBasket: () => dispatch(applyBasket()),
 });
 
 App.propTypes = {
   uploadProducts: PropTypes.func,
+  uploadBasket: PropTypes.func,
 };
 
 export default connect(null, mapDispatchToProps)(App);

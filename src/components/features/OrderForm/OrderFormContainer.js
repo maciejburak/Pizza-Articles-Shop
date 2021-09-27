@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { deletAllOrder, putOrderDone, getBasket, delateWholeOrder, getDescription } from '../../../redux/orderRedux';
-import Order from './Order';
+import { OrderForm } from './OrderForm';
 
 const mapStateToProps = (state) => ({
   basket: getBasket(state),
@@ -8,9 +8,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  sendOrderDone: () => dispatch(putOrderDone()),
+  sendOrderDone: (personalData) => dispatch(putOrderDone(personalData)),
   clearBasket: () => dispatch(deletAllOrder()),
-  delateCurrentOrder: (key) => dispatch(delateWholeOrder(key)),
+  delateCurrentOrder: () => dispatch(delateWholeOrder()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Order);
+export default connect(mapStateToProps, mapDispatchToProps)(OrderForm);

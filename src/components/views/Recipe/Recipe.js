@@ -3,10 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './Recipe.module.scss';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import Footer from '../../layout/Footer/Footer';
-import TopBar from '../../layout/TopBar/TopBar';
-import CheckOrder from '../../common/CheckOrder/CheckOrderContainer';
-
-
+import TopBar from '../../common/TopBar/TopBar.js';
+import OrderNavigation from '../../common/OrderNavigation/OrderNavigationContainer.js';
 
 function Recipe(props) {
   return (
@@ -196,7 +194,7 @@ function Recipe(props) {
           </p>
         </div>
       </div>
-      <CheckOrder/>
+      <OrderNavigation/>
       <Footer />
     </div>
   );

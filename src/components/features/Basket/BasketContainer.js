@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { delateFromOrder, fetchOrderinProgress, getBasket } from '../../../redux/dataRedux';
+import { delateFromOrder, postOrderinProgress, getBasket } from '../../../redux/orderRedux';
 import Basket from './Basket';
 
 const mapStateToProps = (state) => ({
@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  sendOrderInProgress: (des) => dispatch(fetchOrderinProgress(des)),
+  sendOrderInProgress: (des) => dispatch(postOrderinProgress(des)),
   delateOrder: (name) => dispatch(delateFromOrder(name)),
 });
 

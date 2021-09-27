@@ -6,7 +6,7 @@ import oven from '../../../images/oven.png';
 import acessories from '../../../images/acessories.png';
 import { IoIosArrowUp } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import TopBar from '../../layout/TopBar/TopBar';
+import TopBar from '../TopBar/TopBar.js';
 
 
 function DropDownMenu({ toggleMenuValue, func } ) {
@@ -18,7 +18,7 @@ function DropDownMenu({ toggleMenuValue, func } ) {
     style: {
       animation: `${
         toggleMenuValue ? styles.fadeIn : styles.fadeOut
-      } 2s linear forwards`,
+      } 1s linear forwards`,
     },
   };
 
@@ -30,7 +30,7 @@ function DropDownMenu({ toggleMenuValue, func } ) {
           onMouseEnter={() => setFlourDisplay(true)}
           onMouseLeave={() => setFlourDisplay(false)}
         >
-          <Link to ='/flours'>Flours</Link>
+          <Link onClick={()=> func(false)} to ='/flours'>Flours</Link>
           {flourDisplay ? (
             <i className={styles.one}>Choose your type of italian flour</i>
           ) : null}
@@ -39,7 +39,7 @@ function DropDownMenu({ toggleMenuValue, func } ) {
           onMouseEnter={() => setOvenDisplay(true)}
           onMouseLeave={() => setOvenDisplay(false)}
         >
-          <Link to ='/ovens'>Ovens</Link>
+          <Link onClick={()=> func(false)} to ='/ovens'>Ovens</Link>
           {ovenDisplay ? (
             <i className={styles.two}>Check our available ovens</i>
           ) : null}
@@ -48,7 +48,7 @@ function DropDownMenu({ toggleMenuValue, func } ) {
           onMouseEnter={() => setAcessoriesDisplay(true)}
           onMouseLeave={() => setAcessoriesDisplay(false)}
         >
-          <Link to ='/acessories'>Acessories</Link>
+          <Link onClick={()=> func(false)} to ='/acessories'>Acessories</Link>
           {acessoriesDisplay ? (
             <i className={styles.three}>The ones and onlys pizza accesories</i>
           ) : null}
@@ -56,11 +56,11 @@ function DropDownMenu({ toggleMenuValue, func } ) {
       </div>
       <div className={styles.images}>
         {flourDisplay ? (
-          <img src={flour} alt="flour" {...tsmAnimation} />
+          <img src={flour} alt="flour"/>
         ) : null}
-        {ovenDisplay ? <img src={oven} alt="oven" {...tsmAnimation} /> : null}
+        {ovenDisplay ? <img src={oven} alt="oven" /> : null}
         {acessoriesDisplay ? (
-          <img src={acessories} alt="acessories" {...tsmAnimation} />
+          <img src={acessories} alt="acessories" />
         ) : null}
       </div>
       <button className={styles.closeButton} onClick={() => func(false)}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import BackgroundVideo from '../../common/BackgroundVideo/BackgroundVideo';
-import TopBar from '../TopBar/TopBar';
+import TopBar from '../../common/TopBar/TopBar.js';
 import styles from './Header.module.scss';
 
 function Header() {

@@ -33,7 +33,7 @@ function Basket({ basket,sendOrderInProgress, delateOrder }) {
       </div>
       <div className= {styles.comment}>
         {!inputVisable?
-          <button onClick={()=>setInputVisable(true)}>Add Order Comment <BsFillPlusSquareFill/></button>:
+          <button className={styles.addToOrder} onClick={()=>setInputVisable(true)}>Add Order Comment <BsFillPlusSquareFill/></button>:
           <div>
             <button onClick={()=> (setComent(''), setInputVisable(false))}><ImCross/></button>
             <input type="text" value={comment} onChange={(e)=> setComent(e.target.value)}/>

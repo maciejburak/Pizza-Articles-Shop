@@ -29,7 +29,7 @@ function Slider({ data, addToBucket }) {
       >
         {data.map((item) => (
           <div key={item._id} className={styles.sliderElement}>
-            <img src={item.url} />
+            <img src={item.photos[0]} />
             <div className={styles.description}>
               <div className={styles.priceAndName}>
                 <a href={`/products/${item._id}`}>{item.name}</a>
@@ -55,7 +55,7 @@ function Slider({ data, addToBucket }) {
                 </select>
               </div>
               <button onClick={(e)=>(addToBucket({name: item.name, value: optionValue, price: item.price, type: item.type}))} >
-                + ADD TO BUCKET
+                + ADD TO BASKET
               </button>
             </div>
           </div>

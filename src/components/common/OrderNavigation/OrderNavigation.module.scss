@@ -1,0 +1,55 @@
+.orderNavigation{
+  width: 100vw;
+  height: 80px;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  z-index:999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  h1{
+    color: white;
+  }
+    a{
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: white;
+      border-color: white;
+    }
+}
+
+@media (max-width:1067px){
+  .orderNavigation{
+  top:0;
+  }
+}
+
+@media (max-width:790px){
+  .orderNavigation{
+    height: 80px;
+  h1{
+    font-size:32px;
+  }
+  }
+}
+
+@media (max-width:558px){
+  .orderNavigation{
+  h1{
+    display: none;
+  }
+  button{
+    font-size:30px;
+  }
+  }
+}
+
+@media (max-width:380px){
+  .orderNavigation{
+  button{
+    font-size:25px;
+  }
+  }
+}
