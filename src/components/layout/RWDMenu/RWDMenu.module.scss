@@ -1,3 +1,5 @@
+@import '../../../styles/global.scss';
+
 @media (max-width:1067px){
 .rwdMenu{
   z-index:4;
@@ -22,7 +24,7 @@
     height:201px;
     clip:rect(0px,100px,201px,0px);
     border-radius:100px;
-    background-color:rgb(255, 196, 0);
+    background-color:$rwdHeadButton;
     transform:rotate(180deg);
     z-index: 7;
     a{
@@ -61,7 +63,7 @@
     height:201px;
     clip:rect(0px,100px,201px,0px);
     border-radius:100px;
-    background-color:rgb(255, 196, 0);
+    background-color:$rwdHeadButton;
     transform:rotate(60deg);
     z-index: 9;
   }

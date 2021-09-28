@@ -1,3 +1,5 @@
+@import '../../../styles/global.scss';
+
 .orderForm{
   display: flex;
   flex-direction: column;
@@ -10,7 +12,7 @@
     align-items: center;
     .orderSummary{
       position: relative;
-      background-color: white;
+      background-color: $white;
       width:20%;
       display: flex;
       align-items: center;

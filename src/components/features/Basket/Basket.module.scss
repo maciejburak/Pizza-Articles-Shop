@@ -4,21 +4,21 @@
   box-sizing: border-box;
 }
 .basket{
-  background-color: white;
+  background-color: $white;
   width: 300px;
   height: 300px;
   position: absolute;
   top:90px;
   right:6%;
   z-index:2;
-  border: 6px solid #996600;
+  border: 6px solid $gold;
   border-radius: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left:10px;
   padding-top:10px;
-  color:black;
+  color:$black;
   z-index:8;
 
   .content{
@@ -46,10 +46,10 @@
       padding:0;
       padding-top:15px;
       font-size:15px;
-      color:black;
+      color:$black;
     }
     a:hover{
-      color:red;
+      color:$redHover;
     }
     p:nth-child(3) {
       width:125px;
@@ -58,7 +58,7 @@
   .comment{
     .addToOrder, div{
       margin-top:5px;
-      background-color: #996600;
+      background-color: $gold;
     }
     svg{
       padding-top: 2px;
@@ -103,15 +103,15 @@
 }
 .basket::before{
   content:'';
-  background-color: white;
+  background-color: $white;
   position: absolute;
   top:-19px;
   right:41px;
   width: 30px;
   height: 30px;
   transform: rotate(45deg);
-  border-top: 6px solid #996600;
-  border-left: 6px solid #996600;
+  border-top: 6px solid $gold;
+  border-left: 6px solid $gold;
   z-index:1
 }
 

@@ -1,14 +1,16 @@
+@import '../../../styles/global.scss';
+
 .search{
   z-index:999;
   input{
-    color:#fff;
+    color:$white;
     filter: contrast(200%);
     width:250px;
     height:30px;
     border-top:none;
     border-left:none;
     border-right:none;
-    border-color:#fff;
+    border-color:$white;
     background-color: inherit;
     outline: none;
   }
@@ -18,13 +20,13 @@
     margin-left: 10px;
   }
   svg{
-    color:#fff;
+    color:$white;
     position:absolute;
     left:22%;
     top:42%;
   }
   svg:hover{
-    color:red;
+    color:$redHover;
   }
   .searchinResults{
     display: flex;
@@ -35,10 +37,10 @@
 
     a{
       font-weight: 900;
-      color:black;
+      color:$black;
     }
     a:hover{
-      color:red;
+      color:$redHover;
     }
   }
 }

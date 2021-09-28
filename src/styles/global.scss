@@ -1,3 +1,5 @@
+@import "./settings.scss";
+
 html,body {
   margin:0;
   padding:0;
@@ -8,8 +10,6 @@ html,body {
   height: 2px;
   width:100%;
   background-color:#996600;
-  //margin-top:40px;
-  //margin-bottom: 40px;
 }
 
 .rec.rec-arrow-left{
@@ -33,16 +33,6 @@ html,body {
 position: relative;
 }
 
-
-
-/*.rec-carousel-wrapper{
-  img{
-    height:100%;
-    width: 500px;
-    border-radius: 5%;
-    border:5px solid #996600;
-  }
-}*/
 .rec .rec-item-wrapper{
   height: 500px;
 }

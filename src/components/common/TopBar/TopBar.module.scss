@@ -7,12 +7,11 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  color:white;
+  color:$white;
   position: absolute;
   top:0;
   width:100%;
   a{
-    //color:white;
     text-decoration: none;
     filter: contrast(200%);
     cursor:pointer;
@@ -45,13 +44,13 @@
 }
 .white{
     a{
-      color:white;
+      color:$white;
     }
 }
 
 .black{
     a{
-      color:black;
+      color:$black;
     }
 }
 
@@ -82,7 +81,7 @@
       width: 100px;
       border-top-left-radius: 90px;
       border-top-right-radius: 90px;
-      background:rgb(248, 232, 3);
+      background:$rwdHeadButton;
       border:2px solid white;
       position: fixed;
       bottom: 0;

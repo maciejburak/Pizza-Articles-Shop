@@ -1,8 +1,10 @@
+@import '../../../styles/global.scss';
+
 .container{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #996600;
+	background-color: $gold;
 	width:100vw;
 	height:100vh;
 }
@@ -13,8 +15,7 @@
 	grid-template-columns: 0.9fr 1fr;
 	margin: auto;
 	padding: 2.5em 0;
-	//min-width: 600px;
-	background-color: white;
+	background-color: $white;
 	border-radius: 5px;
 	width:600px;
 	img{
@@ -24,7 +25,7 @@
 
 .productPhoto{
 	border-radius: 6px 6px 0 0;
-	background-color: #996600;
+	background-color: $gold;
 	background: radial-gradient(#e5f89e, #96e001);
 	position:relative;
 	width:300px;
@@ -56,13 +57,13 @@
 
 .photoMain {
 	border-radius: 6px 6px 0 0;
-	background-color: #996600;
+	background-color: $gold;
 	background: radial-gradient(#e5f89e, #96e001);
 }
 
 .photoAlbum {
 	border-radius: 0 0 6px 6px;
-	background-color: #fff;
+	background-color: $white;
 	ul {
 		display: flex;
 		justify-content: space-around;
@@ -87,20 +88,20 @@
 .title {
 	h1 {
 		margin-bottom: 0.1em;
-		color: black;
+		color: $black;
 		font-size: 1.5em;
 		font-weight: 900;
 	}
 
 	span {
 		font-size: 0.7em;
-		color: black;
+		color: $black;
 	}
 }
 
 .price {
 	margin: 1.5em 0;
-	color: black;
+	color: $black;
 	font-size: 1.2em;
 
 	span {
@@ -127,7 +128,7 @@
 
 		&:first-child,
 		&:hover {
-			border: 1px solid black;
+			border: 1px solid $black;
 		}
 	}
 
@@ -164,7 +165,7 @@
 	font-weight: 700;
 	letter-spacing: 1.3px;
 	color: #fff;
-	background-color: black;
+	background-color: $black;
 	box-shadow: 2px 2px 25px -7px grey;
 	cursor: pointer;
 

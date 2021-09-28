@@ -1,13 +1,15 @@
+@import '../../../styles/global.scss';
+
 .quote{
   display: flex;
   flex-direction: column;
   width:100%;
-  background-color: #fff5f8;
+  background-color: $background-2;
   font-size: 60px;
   padding-bottom: 20px;
   svg{
     
-    color:#996600;
+    color:$gold;
   }
   .quoteOpen{
     display: flex;
