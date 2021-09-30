@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import styles from './Search.module.scss';
 import { ImCross } from 'react-icons/im';
 
-
 function Search({ products }) {
   const [searchTerm, setsearchTerm] = useState('');
   return (

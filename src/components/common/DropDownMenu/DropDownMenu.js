@@ -8,8 +8,7 @@ import { IoIosArrowUp } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import TopBar from '../TopBar/TopBar.js';
 
-
-function DropDownMenu({ toggleMenuValue, func } ) {
+function DropDownMenu({ toggleMenuValue, func }) {
   const [flourDisplay, setFlourDisplay] = useState(false);
   const [ovenDisplay, setOvenDisplay] = useState(false);
   const [acessoriesDisplay, setAcessoriesDisplay] = useState(false);
@@ -24,13 +23,15 @@ function DropDownMenu({ toggleMenuValue, func } ) {
 
   return toggleMenuValue ? (
     <div className={styles.topShopMenu} {...tsmAnimation}>
-      <TopBar rwd={false}/>
+      <TopBar rwd={false} />
       <div className={styles.optionList}>
         <div
           onMouseEnter={() => setFlourDisplay(true)}
           onMouseLeave={() => setFlourDisplay(false)}
         >
-          <Link onClick={()=> func(false)} to ='/flours'>Flours</Link>
+          <Link onClick={() => func(false)} to="/flours">
+            Flours
+          </Link>
           {flourDisplay ? (
             <i className={styles.one}>Choose your type of italian flour</i>
           ) : null}
@@ -39,7 +40,9 @@ function DropDownMenu({ toggleMenuValue, func } ) {
           onMouseEnter={() => setOvenDisplay(true)}
           onMouseLeave={() => setOvenDisplay(false)}
         >
-          <Link onClick={()=> func(false)} to ='/ovens'>Ovens</Link>
+          <Link onClick={() => func(false)} to="/ovens">
+            Ovens
+          </Link>
           {ovenDisplay ? (
             <i className={styles.two}>Check our available ovens</i>
           ) : null}
@@ -48,20 +51,18 @@ function DropDownMenu({ toggleMenuValue, func } ) {
           onMouseEnter={() => setAcessoriesDisplay(true)}
           onMouseLeave={() => setAcessoriesDisplay(false)}
         >
-          <Link onClick={()=> func(false)} to ='/acessories'>Acessories</Link>
+          <Link onClick={() => func(false)} to="/acessories">
+            Acessories
+          </Link>
           {acessoriesDisplay ? (
             <i className={styles.three}>The ones and onlys pizza accesories</i>
           ) : null}
         </div>
       </div>
       <div className={styles.images}>
-        {flourDisplay ? (
-          <img src={flour} alt="flour"/>
-        ) : null}
+        {flourDisplay ? <img src={flour} alt="flour" /> : null}
         {ovenDisplay ? <img src={oven} alt="oven" /> : null}
-        {acessoriesDisplay ? (
-          <img src={acessories} alt="acessories" />
-        ) : null}
+        {acessoriesDisplay ? <img src={acessories} alt="acessories" /> : null}
       </div>
       <button className={styles.closeButton} onClick={() => func(false)}>
         <IoIosArrowUp />
@@ -77,8 +78,4 @@ DropDownMenu.propTypes = {
   idFromLink: PropTypes.object,
 };
 
-export default (DropDownMenu);
-
-
-
-
+export default DropDownMenu;

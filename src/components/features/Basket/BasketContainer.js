@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { delateFromOrder, postOrderinProgress, getBasket } from '../../../redux/orderRedux';
+import {
+  delateFromOrder,
+  postOrderinProgress,
+  getBasket,
+} from '../../../redux/orderRedux';
 import Basket from './Basket';
 
 const mapStateToProps = (state) => ({

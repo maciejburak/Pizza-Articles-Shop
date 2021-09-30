@@ -8,7 +8,6 @@ function Header() {
     <div className={styles.main}>
       <BackgroundVideo
         videoSource="https://www.youtube.com/watch?v=8qys7dpeiMY"
-        blur={2}
       >
         <TopBar />
       </BackgroundVideo>

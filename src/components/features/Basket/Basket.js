@@ -7,12 +7,12 @@ import { ImCross } from 'react-icons/im';
 import { BsFillPlusSquareFill } from 'react-icons/bs';
 import { BiSave } from 'react-icons/bi';
 
-function useForceUpdate(){
-  const [value, setValue] = useState(0); 
-  return () => setValue(value => value + 1); 
+function useForceUpdate() {
+  const [value, setValue] = useState(0);
+  return () => setValue((value) => value + 1);
 }
 
-function Basket({ basket,sendOrderInProgress, delateOrder }) {
+function Basket({ basket, sendOrderInProgress, delateOrder }) {
   setTimeout(useForceUpdate(), 1000);
   const [comment, setComent] = useState('');
   const [inputVisable, setInputVisable] = useState(false);
@@ -23,7 +23,9 @@ function Basket({ basket,sendOrderInProgress, delateOrder }) {
       <div className={styles.content}>
         {basket.map((item) => (
           <div className={styles.position} key={item.name}>
-            <a onClick={(e) => (e.preventDefault(), delateOrder(item.name))}><ImCross/></a>
+            <a onClick={(e) => (e.preventDefault(), delateOrder(item.name))}>
+              <ImCross />
+            </a>
             <p>{item.value}</p>
             <p>{item.name}</p>
             <p>{item.price}$</p>
@@ -31,15 +33,35 @@ function Basket({ basket,sendOrderInProgress, delateOrder }) {
           </div>
         ))}
       </div>
-      <div className= {styles.comment}>
-        {!inputVisable?
-          <button className={styles.addToOrder} onClick={()=>setInputVisable(true)}>Add Order Comment <BsFillPlusSquareFill/></button>:
+      <div className={styles.comment}>
+        {!inputVisable ? (
+          <button
+            className={styles.addToOrder}
+            onClick={() => setInputVisable(true)}
+          >
+            Add Order Comment <BsFillPlusSquareFill />
+          </button>
+        ) : (
           <div>
-            <button onClick={()=> (setComent(''), setInputVisable(false))}><ImCross/></button>
-            <input type="text" value={comment} onChange={(e)=> setComent(e.target.value)}/>
-            <button onClick={()=> (setFinalDescription(comment), setComent(''), setInputVisable(false))} ><BiSave/></button>
+            <button onClick={() => (setComent(''), setInputVisable(false))}>
+              <ImCross />
+            </button>
+            <input
+              type="text"
+              value={comment}
+              onChange={(e) => setComent(e.target.value)}
+            />
+            <button
+              onClick={() => (
+                setFinalDescription(comment),
+                setComent(''),
+                setInputVisable(false)
+              )}
+            >
+              <BiSave />
+            </button>
           </div>
-        }
+        )}
       </div>
       <div className={styles.total}>
         <div className={styles.line}></div>
@@ -47,7 +69,11 @@ function Basket({ basket,sendOrderInProgress, delateOrder }) {
           <p>
             <b>Total: {countBasket(basket)}$</b>
           </p>
-          <Button variant="contained" color="primary" onClick={()=>(sendOrderInProgress(finalDescription))}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => sendOrderInProgress(finalDescription)}
+          >
             <a href="/order">CHECK ORDER</a>
           </Button>
         </div>

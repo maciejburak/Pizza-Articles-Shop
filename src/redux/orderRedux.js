@@ -12,15 +12,18 @@ const createActionName = (name) => `app/${reducerName}/${name}`;
 const APPLY_BASKET = createActionName('APPLY_BASKET');
 const ADD_ORDER = createActionName('ADD_ORDER');
 const ADD_DESCRIPTION = createActionName('ADD_DESCRIPTION');
-const DELATE_ORDER_POSITION = createActionName('DELATE_ORDER_POSITION');
+const DELETE_ORDER_POSITION = createActionName('DELETE_ORDER_POSITION');
 const CLEAR_ORDER = createActionName('CLEAR_ORDER');
 
 /* action creators */
 export const applyBasket = (payload) => ({ payload, type: APPLY_BASKET });
 export const addToOrder = (payload) => ({ payload, type: ADD_ORDER });
 export const addDescription = (payload) => ({ payload, type: ADD_DESCRIPTION });
-export const delateFromOrder = (payload) => ({ payload, type: DELATE_ORDER_POSITION });
-export const deletAllOrder = (payload) => ({payload, type: CLEAR_ORDER});
+export const delateFromOrder = (payload) => ({
+  payload,
+  type: DELETE_ORDER_POSITION,
+});
+export const deletAllOrder = (payload) => ({ payload, type: CLEAR_ORDER });
 
 /* thunk creators */
 export const addOrder = (product) => {
@@ -41,10 +44,7 @@ export const addOrder = (product) => {
 export const postOrderinProgress = (description) => {
   return (dispatch, getState) => {
     try {
-      localStorage.setItem(
-        'description',
-        JSON.stringify(description)
-      );
+      localStorage.setItem('description', JSON.stringify(description));
       Axios.post('http://localhost:8000/api/orders/postOrder', {
         basket: getState().order.basket,
         key: uuidv4(),
@@ -61,7 +61,9 @@ export const postOrderinProgress = (description) => {
 export const putOrderDone = (personalData) => {
   return (dispatch) => {
     try {
-      Axios.put(`http://localhost:8000/api/orders/saveOrder`, {data: personalData});
+      Axios.put(`http://localhost:8000/api/orders/saveOrder`, {
+        data: personalData,
+      });
     } catch (e) {
       alert(e.message);
     }
@@ -129,7 +131,7 @@ export const reducer = (statePart = [], action = {}) => {
         description: action.payload,
       };
     }
-    case DELATE_ORDER_POSITION: {
+    case DELETE_ORDER_POSITION: {
       const actualBasket = JSON.parse(localStorage.getItem('lsbasket'));
       const filteredElement = actualBasket.filter(
         (item) => item.name == action.payload

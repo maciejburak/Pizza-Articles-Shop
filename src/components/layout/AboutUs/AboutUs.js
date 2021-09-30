@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styles from './AboutUs.module.scss';
 import { MdHighQuality } from 'react-icons/md';
 import { GiTripleGate } from 'react-icons/gi';
@@ -53,7 +53,7 @@ export const AboutUs = (props) => {
           alt="pizza"
         />
       </div>
-      {contactActive ? <Contact close={setContactActive}/> : null}
+      {contactActive ? <Contact close={setContactActive} /> : null}
       <div className={styles.help}>
         <button onClick={() => setContactActive(true)}>
           GOT ANY QUESTIONS? NEED HELP?
@@ -64,6 +64,5 @@ export const AboutUs = (props) => {
     </div>
   );
 };
-
 
 export default AboutUs;

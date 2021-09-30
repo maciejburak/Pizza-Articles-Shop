@@ -1,5 +1,11 @@
 import { connect } from 'react-redux';
-import { deletAllOrder, putOrderDone, getBasket, delateWholeOrder, getDescription } from '../../../redux/orderRedux';
+import {
+  deletAllOrder,
+  putOrderDone,
+  getBasket,
+  delateWholeOrder,
+  getDescription,
+} from '../../../redux/orderRedux';
 import { OrderForm } from './OrderForm';
 
 const mapStateToProps = (state) => ({

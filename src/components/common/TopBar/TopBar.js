@@ -15,7 +15,13 @@ function TopBar({ open, rwd, black }) {
   const [activeBucket, setActiveBucket] = useState(false);
   const [rwdMenu, setRwdMenu] = useState(false);
   return !toggleValue ? (
-    <div className={black? styles.topBar + ' ' + styles.black :styles.topBar + ' ' + styles.white}>
+    <div
+      className={
+        black
+          ? styles.topBar + ' ' + styles.black
+          : styles.topBar + ' ' + styles.white
+      }
+    >
       <div className={styles.leftSide}>
         <Search />
       </div>

@@ -33,7 +33,6 @@ export const fetchPublished = () => {
   };
 };
 
-
 /* reducer */
 export const reducer = (statePart = [], action = {}) => {
   switch (action.type) {
@@ -65,7 +64,7 @@ export const reducer = (statePart = [], action = {}) => {
         },
       };
     }
-    
+
     default:
       return statePart;
   }

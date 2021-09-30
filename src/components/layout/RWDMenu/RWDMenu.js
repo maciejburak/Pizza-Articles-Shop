@@ -13,7 +13,10 @@ function RWDMenu({
     <div className={styles.rwdMenu}>
       <div className={styles.hold}>
         <div className={styles.rwdLink1}>
-          <a onClick={() => (funcSetRWD(false), funcSetAB(false))} href="/recipe">
+          <a
+            onClick={() => (funcSetRWD(false), funcSetAB(false))}
+            href="/recipe"
+          >
             PIZZA RECIPE
           </a>
         </div>

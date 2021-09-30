@@ -44,12 +44,23 @@ export const OrderForm = ({
             ))}
           </ul>
           {description ? (
-            <p className={styles.description}><span>Description:</span> {description}</p>
+            <p className={styles.description}>
+              <span>Description:</span> {description}
+            </p>
           ) : null}
           <div className={styles.sum}>
-            <div>Delivery: <span>20$</span></div>
-            <div>Products: <span>{countBasket(basket)}$</span></div>
-            <div>Total: <span>{countBasket(basket)!=0?countBasket(basket)+20:0}$</span></div>
+            <div>
+              Delivery: <span>20$</span>
+            </div>
+            <div>
+              Products: <span>{countBasket(basket)}$</span>
+            </div>
+            <div>
+              Total:{' '}
+              <span>
+                {countBasket(basket) != 0 ? countBasket(basket) + 20 : 0}$
+              </span>
+            </div>
           </div>
         </div>
         <div className={styles.orderDetails}>

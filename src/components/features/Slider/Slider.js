@@ -17,7 +17,7 @@ function Slider({ data, addToBucket }) {
     updateSize();
     return () => window.removeEventListener('resize', updateSize);
   }, []);
-  
+
   return (
     <div id="products" className={styles.slider}>
       <Carousel
@@ -43,7 +43,7 @@ function Slider({ data, addToBucket }) {
                 >
                   {getNumbersFrom1To100().map((element) =>
                     element == 1 ? (
-                      <option value={element}  key={element}>
+                      <option value={element} key={element}>
                         {element}
                       </option>
                     ) : (
@@ -54,7 +54,16 @@ function Slider({ data, addToBucket }) {
                   )}
                 </select>
               </div>
-              <button onClick={(e)=>(addToBucket({name: item.name, value: optionValue, price: item.price, type: item.type}))} >
+              <button
+                onClick={(e) =>
+                  addToBucket({
+                    name: item.name,
+                    value: optionValue,
+                    price: item.price,
+                    type: item.type,
+                  })
+                }
+              >
                 + ADD TO BASKET
               </button>
             </div>

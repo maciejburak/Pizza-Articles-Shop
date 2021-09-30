@@ -7,14 +7,8 @@ const BackgroundVideo = ({ children }) => {
   return (
     <>
       <div className="container">
-        
-        <video
-          muted ={true}
-          autoPlay={true}
-          loop
-          className={styles.video}
-        >
-          <source src={AdvVideo} type="video/mp4"/>
+        <video muted={true} autoPlay={true} loop className={styles.video}>
+          <source src={AdvVideo} type="video/mp4" />
         </video>
         {children}
       </div>
@@ -24,8 +18,6 @@ const BackgroundVideo = ({ children }) => {
 
 BackgroundVideo.propTypes = {
   children: PropTypes.node,
-  videoSource: PropTypes.string,
-  blur: PropTypes.number,
 };
 
 export default BackgroundVideo;

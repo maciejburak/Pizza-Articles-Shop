@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout/MainLayout';
@@ -14,11 +14,11 @@ import { fetchPublished } from './redux/dataRedux';
 import { connect } from 'react-redux';
 import { applyBasket } from './redux/orderRedux';
 
-function App({uploadProducts, uploadBasket}) {
+function App({ uploadProducts, uploadBasket }) {
   useEffect(() => {
     uploadProducts();
     uploadBasket();
-  },[]);
+  }, []);
   return (
     <BrowserRouter>
       <MainLayout>
@@ -31,7 +31,6 @@ function App({uploadProducts, uploadBasket}) {
           <Route exact path="/about" component={AboutUs} />
           <Route exact path="/products/:id" component={Product} />
           <Route exact path="/order" component={Order} />
-          {/*<Route path='*' component={NotFound} />*/}
         </Switch>
       </MainLayout>
     </BrowserRouter>
@@ -49,5 +48,3 @@ App.propTypes = {
 };
 
 export default connect(null, mapDispatchToProps)(App);
-
-

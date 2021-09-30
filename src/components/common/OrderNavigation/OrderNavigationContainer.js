@@ -10,5 +10,4 @@ const mapDispatchToProps = (dispatch) => ({
   sendOrderInProgress: (des) => dispatch(postOrderinProgress(des)),
 });
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(OrderNavigation);

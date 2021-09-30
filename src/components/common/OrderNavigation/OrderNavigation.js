@@ -5,13 +5,13 @@ import { Button } from '@material-ui/core';
 import { BiRightArrowCircle, BiLeftArrowCircle } from 'react-icons/bi';
 
 function OrderNavigation({ basket, goBack, sendOrderInProgress }) {
-  return basket.length != 0  ? (
+  return basket.length != 0 ? (
     !goBack ? (
       <div className={styles.orderNavigation}>
         <h1>CHECK YOUR ORDER</h1>
-        <Button onClick ={() => sendOrderInProgress('')}>
+        <Button onClick={() => sendOrderInProgress('')}>
           <a href="/order">
-            Go to the order <BiRightArrowCircle/>
+            Go to the order <BiRightArrowCircle />
           </a>
         </Button>
       </div>
@@ -20,7 +20,7 @@ function OrderNavigation({ basket, goBack, sendOrderInProgress }) {
         <h1>GO BACK TO SHOPPING</h1>
         <Button>
           <a href="/">
-            <BiLeftArrowCircle/> Go Back
+            <BiLeftArrowCircle /> Go Back
           </a>
         </Button>
       </div>
